@@ -1,7 +1,7 @@
 <h1 align="center">NA news</h1>
 
 
-<p align="center"><a href="https://www.youtube.com/watch?v=keHmznJrX8w" target="_blank"><img src="https://img.youtube.com/vi/v/0.jpg"/></a></p>
+<p align="center"><a href="https://www.youtube.com/watch?v=keHmznJrX8w" target="_blank"><img src="https://img.youtube.com/vi/keHmznJrX8w/0.jpg"/></a></p>
 
 
 O nanews é um blog por assinatura mensal utilizando o stripe como sistema de pagamento, prismic como CMS para criação dos posts e FaunaDB como banco de dados.
