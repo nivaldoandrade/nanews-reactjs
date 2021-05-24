@@ -1,0 +1,33 @@
+.menuButton {
+	border: 0;
+	background-color: transparent;
+	width: 40px;
+	line-height: 5rem;
+
+	&.isActive {
+		.one {
+			transform: rotate(45deg) translate((7px, 7px));
+		}
+
+		.two {
+			opacity: 0;
+		}
+
+		.three {
+			transform: rotate(-45deg) translate((8px, -9px));
+		}
+	}
+}
+
+.one,
+.two,
+.three {
+	height: 5px;
+	width: 100%;
+	margin: 6px auto;
+	border-radius: 5px;
+	background-color: var(--white);
+
+	transition: transform 0.2s opacity 0.2s;
+}
+
