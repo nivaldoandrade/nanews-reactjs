@@ -1,0 +1,22 @@
+.containerNavMobile {
+	margin-left: auto;
+	display: none;
+}
+
+.containerNavDesktop {
+	flex: 1;
+	margin-left: auto;
+}
+
+@media (max-width: 930px) {
+	.containerNavMobile {
+		display: block;
+	}
+
+	.containerNavDesktop {
+		display: none;
+	}
+}
+
+
+

@@ -1,13 +1,14 @@
 import { ActiveLink } from '../ActiveLink';
 import { SingInButton } from '../SingInButton';
 
-import styles from './navLinks.module.scss';
+import styles from './styles.module.scss';
 
-export function NavLinks() {
-
-
+export function NavMobile() {
 	return (
-		<nav className={styles.navMobile}>
+		<div
+			className={styles.contentNavMobile}
+			data-testid="navMobile-component"
+		>
 			<ActiveLink href="/">
 				<a>Home</a>
 			</ActiveLink>
@@ -15,7 +16,6 @@ export function NavLinks() {
 				<a>Posts</a>
 			</ActiveLink>
 			<SingInButton />
-		</nav>
-
+		</div>
 	)
 }

@@ -133,7 +133,7 @@ Opcional:
 PRISMIC_API_ENDPOINT=
 PRISMIC_ACCESS_TOKEN=
 ```
-**Prismic API Endpoint e Gerar token:** [API & Security.](https://spacetraveling-7.prismic.io/settings/apps/)
+**Prismic API Endpoint e Gerar token:** API & Security
 
 ### **Stripe**
 ```

@@ -51,8 +51,10 @@
 	 }
 }
 
-@media (max-width: 753px) {
+@media (max-width: 823px) {
 	.contentContainer {
+		height: 100vh;
+
 		img {
 			display: none;
 		}

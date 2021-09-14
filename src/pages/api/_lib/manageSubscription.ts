@@ -28,11 +28,8 @@ export default async function saveSubscription(
 		status: subscription.status,
 		price_id: subscription.items.data[0].price.id,
 	}
-	console.log(subscribeId);
-	console.log(subscriptionData);
 
 	if (isCreate) {
-		console.log('create'); //REALIZANDO 2 QUERY TANTO CREATE QUANTO UPDATE NO MOMENTO DA CRIAÇÃO
 		await fauna.query(
 			q.Create(
 				q.Collection('subscriptions'),
@@ -40,7 +37,6 @@ export default async function saveSubscription(
 			)
 		)
 	} else {
-		console.log('update');
 		try {
 			await fauna.query(
 				q.Replace(

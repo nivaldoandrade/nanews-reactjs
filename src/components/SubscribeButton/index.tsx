@@ -8,11 +8,7 @@ import { SessionProps as UseSession } from '../../types/session';
 import styles from './styles.module.scss';
 
 
-interface SubscribeButtonProps {
-	priceID: string;
-}
-
-export function SubscribeButton({ priceID }: SubscribeButtonProps) {
+export function SubscribeButton() {
 	const [session] = useSession() as [UseSession, boolean];
 	const router = useRouter();
 
@@ -45,7 +41,7 @@ export function SubscribeButton({ priceID }: SubscribeButtonProps) {
 			type="button"
 			onClick={() => handleSubscribe()}
 		>
-			{ session?.userActivationSubscription ? 'Go to Posts' : 'Subscribe now'}
+			{session?.userActivationSubscription ? 'Go to Posts' : 'Subscribe now'}
 		</button>
 	)
 }

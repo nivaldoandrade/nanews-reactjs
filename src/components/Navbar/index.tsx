@@ -1,28 +1,43 @@
-import { SingInButton } from '../SingInButton';
-import { ActiveLink } from '../ActiveLink';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 
-import styles from './navbar.module.scss';
+import { MenuIcon } from '../MenuIcon'
+import { NavDesktop } from '../NavDesktop';
+import { NavMobile } from '../NavMobile';
+
+
+import styles from './styles.module.scss';
 
 export function Navbar() {
+	const [isToggle, setIsToggle] = useState(false);
+
+	const { asPath } = useRouter();
+
+	useEffect(() => {
+		setIsToggle(false);
+	}, [asPath]);
+
+	function activeMenuMobile() {
+		setIsToggle(state => !state);
+	}
+
 	return (
-		<nav>
-			<img src="/images/logo.svg" alt="ig.news" />
+		<>
+			<nav
+				data-testid="navMobile-element"
+				className={styles.containerNavMobile}
+			>
+				<MenuIcon isToggle={isToggle} onClick={activeMenuMobile} />
+				{isToggle && <NavMobile />}
+			</nav>
 
-			<SingInButton />
 
-			<div >
-
-				<div className={styles.navMobile}>
-					<nav>
-						<ActiveLink activeClassName={styles.active} href="/">
-							<a onClick={() => { }}>Home</a>
-						</ActiveLink>
-						<ActiveLink activeClassName={styles.active} href="/posts">
-							<a onClick={() => { }}>Posts</a>
-						</ActiveLink>
-					</nav>
-				</div>
-			</div>
-		</nav>
-	);
+			<nav
+				data-testid="navDesktop-element"
+				className={styles.containerNavDesktop}
+			>
+				<NavDesktop />
+			</nav>
+		</>
+	)
 }

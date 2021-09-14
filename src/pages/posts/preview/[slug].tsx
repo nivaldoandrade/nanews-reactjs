@@ -21,7 +21,7 @@ interface PostPreviewProps {
 	}
 }
 
-export default function postPreview({ post }: PostPreviewProps) {
+export default function PostPreview({ post }: PostPreviewProps) {
 	const [session] = useSession() as [UseSession, boolean];
 	const router = useRouter();
 
@@ -50,7 +50,7 @@ export default function postPreview({ post }: PostPreviewProps) {
 							<Link href="/">
 								<a>Subscribe now</a>
 							</Link>
-							 🤗
+							🤗
 						</strong>
 					</div>
 				</article>

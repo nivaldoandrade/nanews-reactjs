@@ -1,13 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
-import { ActiveLink } from '../ActiveLink';
-import { SingInButton } from '../SingInButton';
-import { MenuIcon } from '../Navbar/MenuIcon';
+import { Navbar } from '../Navbar';
 
 import styles from './styles.module.scss';
-import { NavLinks } from '../Navbar/NavLinks';
-import Link from 'next/link';
 
 export function Header() {
 	const [isToggle, setIsToggle] = useState(false);
@@ -31,28 +28,7 @@ export function Header() {
 					</a>
 				</Link>
 
-				<nav className={styles.navDesktop}>
-					<ActiveLink
-						activeClassName={styles.active}
-						href="/"
-					>
-						<a>Home</a>
-					</ActiveLink>
-					<ActiveLink
-						activeClassName={styles.active}
-						href="/posts"
-					>
-						<a>Posts</a>
-					</ActiveLink>
-				</nav>
-				<div className={`${styles.divButton} ${styles.navDesktop}`}>
-					<SingInButton />
-				</div>
-				<div className={styles.navMobile}>
-					<MenuIcon isToggle={isToggle} onClick={activeMenuMobile} />
-					{isToggle && <NavLinks />}
-				</div>
-
+				<Navbar />
 			</div>
 		</header>
 	)

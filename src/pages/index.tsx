@@ -11,7 +11,6 @@ import { priceFormatted } from '../utils/format';
 import { SessionProps as UseSession } from '../types/session';
 
 import styles from './home.module.scss';
-import { useState } from 'react';
 
 
 interface HomeProps {
@@ -23,7 +22,6 @@ interface HomeProps {
 
 export default function Home({ product }: HomeProps) {
 	const [session] = useSession() as [UseSession, boolean];
-
 
 	return (
 		<>
@@ -47,7 +45,7 @@ export default function Home({ product }: HomeProps) {
 						)
 					}
 
-					<SubscribeButton priceID={product.priceID} />
+					<SubscribeButton />
 				</section>
 				<img src="/images/avatar.svg" alt="Girl coding" />
 			</main>
