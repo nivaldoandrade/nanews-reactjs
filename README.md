@@ -6,6 +6,9 @@
 
 O nanews é um blog por assinatura mensal utilizando o stripe como sistema de pagamento, prismic como CMS para criação dos posts e FaunaDB como banco de dados.
 
+[**DEMOSTRAÇÃO DO NA NEWS**](https://nanews-reactjs.vercel.app/)    
+**OBS: Utilizar o número de cartão 4242 4242 4242 4242 para teste!!**
+
 
 ## **Configurações Iniciais**
 
