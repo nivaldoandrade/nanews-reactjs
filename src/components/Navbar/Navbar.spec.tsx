@@ -20,6 +20,24 @@ jest.mock('next-auth/client', () => {
 	}
 })
 
+Object.defineProperty(window, 'matchMedia', {
+	writable: true,
+	value: jest.fn().mockImplementation(query => ({
+		matches: false,
+		media: query,
+		onchange: null,
+		addListener: jest.fn(), // deprecated
+		removeListener: jest.fn(), // deprecated
+		addEventListener: jest.fn(),
+		removeEventListener: jest.fn(),
+		dispatchEvent: jest.fn(),
+	})),
+});
+
+
+global.window.matchMedia('(max-width: 1000px)');
+
+
 
 describe('Navbar Component', () => {
 	it('should be render correctly', () => {
@@ -33,6 +51,8 @@ describe('Navbar Component', () => {
 	})
 	it('should be render component NavMobile if click button MenuIcon', () => {
 		render(<Navbar />);
+
+		screen.logTestingPlaygroundURL();
 
 		const menuIconElement = screen.getByTestId('menuButton-element');
 

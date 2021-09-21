@@ -1,5 +1,5 @@
-import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
 import { MenuIcon } from '../MenuIcon'
 import { NavDesktop } from '../NavDesktop';
@@ -7,6 +7,7 @@ import { NavMobile } from '../NavMobile';
 
 
 import styles from './styles.module.scss';
+
 
 export function Navbar() {
 	const [isToggle, setIsToggle] = useState(false);
@@ -16,6 +17,7 @@ export function Navbar() {
 	useEffect(() => {
 		setIsToggle(false);
 	}, [asPath]);
+
 
 	function activeMenuMobile() {
 		setIsToggle(state => !state);
@@ -41,3 +43,4 @@ export function Navbar() {
 		</>
 	)
 }
+

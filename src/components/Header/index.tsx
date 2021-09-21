@@ -7,18 +7,6 @@ import { Navbar } from '../Navbar';
 import styles from './styles.module.scss';
 
 export function Header() {
-	const [isToggle, setIsToggle] = useState(false);
-
-	const { asPath } = useRouter();
-
-	useEffect(() => {
-		setIsToggle(false);
-	}, [asPath]);
-
-	function activeMenuMobile() {
-		setIsToggle(state => !state);
-	}
-
 	return (
 		<header className={styles.headerContainer}>
 			<div className={styles.headerContent}>

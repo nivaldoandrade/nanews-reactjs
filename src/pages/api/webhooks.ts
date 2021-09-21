@@ -42,6 +42,7 @@ const webhookHandler = async (req: NextApiRequest, res: NextApiResponse) => {
 				switch (type) {
 					case 'customer.subscription.updated':
 					case 'customer.subscription.deleted':
+						console.log('teste');
 						const subscription = event.data.object as Stripe.Subscription;
 						await saveSubscription(
 							subscription.id,
@@ -52,6 +53,7 @@ const webhookHandler = async (req: NextApiRequest, res: NextApiResponse) => {
 						break
 					case 'checkout.session.completed':
 						const stripeCheckoutSession = event.data.object as Stripe.Checkout.Session;
+						console.log('teste');
 
 						await saveSubscription(
 							stripeCheckoutSession.subscription.toString(),

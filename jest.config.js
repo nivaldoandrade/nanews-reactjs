@@ -8,5 +8,13 @@ module.exports = {
 	},
 	testEnvironment: 'jsdom',
 	setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
-	preset: 'ts-jest'
+	preset: 'ts-jest',
+	collectCoverage: true,
+	collectCoverageFrom: [
+		"src/**/*.tsx",
+		"!src/**/*.spec.tsx",
+		"!src/**/_app.tsx",
+		"!src/**/_document.tsx",
+	],
+	coverageReporters: ["lcov", "json"]
 }
