@@ -7,10 +7,7 @@ export default class MyDocument extends Document {
 				<Head>
 					<meta name="description" content="NA news é um blog sobre o mundo do ReactJS." />
 					<meta name="keywords" content="ReactJS, React, Frontend, Front-end" />
-					<meta name="robots" content="index, follow" />
-					<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 					<meta name="language" content="Portuguese" />
-					<meta name="revisit-after" content="1 days" />
 					<meta name="author" content="Nivaldo ANdrade" />
 					<link rel="preconnect" href="https://fonts.gstatic.com" />
 					<link rel="shortcut icon" href="/favicon.png" type="image/png" />
