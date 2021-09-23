@@ -1,6 +1,6 @@
+import { ReactElement, cloneElement, useState, useEffect } from 'react';
 import Link, { LinkProps } from 'next/link';
 import { useRouter } from 'next/router';
-import { ReactElement, cloneElement } from 'react';
 
 interface ActiveLinkProps extends LinkProps {
 	children: ReactElement;
@@ -8,12 +8,18 @@ interface ActiveLinkProps extends LinkProps {
 }
 
 export function ActiveLink({ children, activeClassName, ...rest }: ActiveLinkProps) {
+	const [className, setClassName] = useState('');
 	const { asPath } = useRouter();
 
-	const className =
-		(asPath === rest.href || asPath.substring(0, asPath.indexOf("/", 1)) === rest.href)
-			? activeClassName
-			: ''
+	useEffect(() => {
+		(
+			asPath === rest.href ||
+			asPath.substring(0, asPath.indexOf("/", 1)) === rest.href
+		)
+			? setClassName(activeClassName)
+			: setClassName('')
+
+	}, [asPath, rest.href])
 
 	return (
 		<Link {...rest} passHref={true}>
